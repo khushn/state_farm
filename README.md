@@ -13,7 +13,7 @@
 </blockquote>
 
 Tensorboard view:
-<image href="tensorboard_1.png"/>
+<image src="tensorboard_1.png"/>
 
 
 #### Testing
