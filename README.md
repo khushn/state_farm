@@ -22,6 +22,26 @@ Tensorboard view:
 	python tensorflow/examples/label_image/label_image.py --input_layer=Mul --output=final_result --graph=../output_graph.pb --labels=../output_labels.txt --image=../data/sample/valid/c5/img_97543.jpg
 </blockquote>
 
+#### Training on GPU
+
+Tensorboard ran, but could not view it on port 6006 (perhaps security group changes did not take affect). But below are the end logs of training.
+
+Also NOTE: The bulk of the time around over 1 hour was spent in just creating bottleneck files for the all the images 
+
+<blockquote>
+	0% (N=100)
+INFO:tensorflow:2018-01-18 19:24:54.070764: Step 3990: Train accuracy = 85.0%
+INFO:tensorflow:2018-01-18 19:24:54.071000: Step 3990: Cross entropy = 0.503428
+INFO:tensorflow:2018-01-18 19:24:54.152726: Step 3990: Validation accuracy = 89.0% (N=100)
+INFO:tensorflow:2018-01-18 19:24:54.900999: Step 3999: Train accuracy = 89.0%
+INFO:tensorflow:2018-01-18 19:24:54.901243: Step 3999: Cross entropy = 0.409679
+INFO:tensorflow:2018-01-18 19:24:54.983265: Step 3999: Validation accuracy = 88.0% (N=100)
+INFO:tensorflow:Final test accuracy = 92.5% (N=2220)
+INFO:tensorflow:Froze 2 variables.
+Converted 2 variables to const ops.
+
+</blockquote>
+
 
 #### AMI Building
 <blockquote>
