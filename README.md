@@ -48,3 +48,16 @@ Converted 2 variables to const ops.
 	aws ec2 create-image --instance-id i-01595fe39f6a7d0b1 --name "kaggle_fast_ai_v2" --description "Used for Kaggle & DL" --no-reboot
 </blockquote>
 
+
+#### Classifying the test images
+There is a problem with tensorflow transfer learning samples, in that the default code can only work on the images sequentially. When I tried to give the images in batches it gave an error implying it expects only 1 X 299 x 299 x 3 i.e. can't take ? x 299 x 299 x 3. Sample the below message in the notebook when I tried to give 2 images:
+
+<blockquote>
+	ValueError: Cannot feed value of shape (2, 299, 299, 3) for Tensor 'import/Mul:0', which has shape '(1, 299, 299, 3)'
+</blockquote>
+
+This issue has also been well documented here: 
+https://github.com/tensorflow/tensorflow/issues/1021
+
+There are some workarounds mentioned in the above link. But they don't look straightforward. So as a result, I am suspending this project here (noted on 25 Jan 2018)
+
